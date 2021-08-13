@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week3</title>
+</head>
+<body>
+    <h1>JavaScript Techniques</h1>
+<!-------------------------TASK 1-->
+ <h2>TASK 1:</h2>
+<!-------------------------String Length Example-->
+ <h3>The length property returns the length of a string:</h3>
+
+ <div Id="txtLength"></div>
+
+ <script>
+ let text = "NhatDuyHa";
+ document.getElementById("txtLength").innerHTML = text.length;
+ </script>
+<!-------------------------String Slice Method-->
+ <h3> The Slice method extract a part of a string
+    and returns the extracted parts in a new string:</h3>
+    
+    <div id="slice"></div>
+    
+    <script>
+    let str = "A, B, C";
+    document.getElementById("slice").innerHTML = str.slice(0,2); 
+    </script>
+<!-------------------------Change String Content-->
+<h3>Change String Content Example:</h3> 
+
+ <button onclick="changeContent()">Fix Name</button>
+
+    <p id="name">My name is Daniel!</p>
+    
+    <script>
+    function changeContent() {
+      let text = document.getElementById("name").innerHTML;
+      document.getElementById("name").innerHTML = text.replace("Daniel","Nhat Duy");
+    }
+    </script>
+<!-------------------------Upper case to Lower case-->  
+ <h3>Change string to upper case:</h3>
+
+<button onclick="changeCase()">Change</button>
+
+<p id="upp">uppercase</p>
+
+<script>
+function changeCase() {
+  let text = document.getElementById("upp").innerHTML;
+  document.getElementById("upp").innerHTML =
+  text.toUpperCase(); 
+}
+</script>
+<!-------------------------TASK 2-->
+<h2>TASK 2:</h2>
+<h3> Number methods</h3>
+<!-------------------------Number to string-->  
+<h3>Change number to string:</h3> 
+
+<p>The toString() method converts a number to a string.</p>
+
+<p id="numb"></p>
+
+<script>
+let x = 123;
+document.getElementById("numb").innerHTML =
+  x.toString() + " " + (456).toString() + " " + (700 + 89).toString();
+</script>
+<!-------------------------Round up number-->  
+<h3>Round up number</h3>
+
+<p>The toFixed() method rounds a number to a given number of digits.</p>
+
+<p id="Round"></p>
+
+<script>
+let a = 4.111;
+document.getElementById("Round").innerHTML =
+  a.toFixed(0) + " <br> " +
+  a.toFixed(2) + " <br> " +
+  a.toFixed(4) + "  <br> " +
+  a.toFixed(6);
+</script>
+<!-------------------------Date to number-->  
+<h3>Convert date to number</h3>
+
+<p>The Number() method can convert a date to a number:</p>
+
+<p id="dates"></p>
+
+<script>
+let y = new Date("2021-08-01");
+document.getElementById("dates").innerHTML = Number(y); 
+</script>
+<!-------------------------Array Method-->  
+<h3> Array methods</h3>
+<!-------------------------Remove last elements-->  
+<h3>Remove last element</h3>
+
+<p>The pop() method removes the last element from an array.</p>
+
+<p id="fruitArray1"></p>
+<p id="fruitArray2"></p>
+
+<script>
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("fruitArray1").innerHTML = fruits;
+fruits.pop();
+document.getElementById("fruitArray2").innerHTML = fruits;
+</script>
+<!-------------------------Add last elements--> 
+<h3>Add element at the end</h3> 
+
+<p>The push() method appends a new element to an array.</p>
+
+<button onclick="addNewE()">Try it</button>
+<p id="fr"></p>
+
+<script>
+const fruits2 = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("fr").innerHTML = fruits2;
+
+function addNewE() {
+  fruits2.push("Kiwi");
+  document.getElementById("fr").innerHTML = fruits2;
+}
+</script>
+<!-------------------------Set method-->  
+<h3>Set method</h3>
+<p>Create a new Set:</p>
+
+<p id="setJS"></p>
+
+<script>
+
+const A = "A";
+const B = "B";
+const C = "C";
+
+const letters = new Set();
+
+letters.add(A);
+letters.add(B);
+letters.add(C);
+
+document.getElementById("setJS").innerHTML = letters.size;
+</script>
+
+</body>
+</html>
