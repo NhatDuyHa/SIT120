@@ -1,0 +1,95 @@
+/* Global styles
+-----------------------------------------------*/
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after{
+  box-sizing: inherit;
+}
+body {
+  color: #2F1B25;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+}
+img {
+  width: 300px;
+}
+a {
+  color: #FFF4E9;
+}
+a:hover {
+  text-decoration: none;
+}
+h1{
+  font-size: 100px;
+  line-height: 1;
+}
+h2 {
+
+  font-size: 45px;
+}
+.content-wrap {
+  width: 800px;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+h1, h2{
+  font-family: 'Caveat', cursive;
+  font-weight: 400;
+  margin: 0;
+
+}
+
+/* Profile
+-----------------------------------------------*/
+
+header {
+  background-color: #77BA99;
+  color: #4E3822;
+}
+
+
+/* Project
+-----------------------------------------------*/
+.project {
+  background-color: #FFF4E9;
+}
+.project a {
+  color: #77BA99;
+  background-color: #2F1B25;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+.project a:hover {
+  background: rgba(47,27,37, 85%);
+}
+.project-item img {
+  float: left;
+  margin-right: 20px;
+}
+
+/* Work exp
+-----------------------------------------------*/
+.work {
+  background-color: #CE6A84;
+}
+
+
+
+/* Education
+-----------------------------------------------*/
+
+
+
+
+/* Cactoc info
+-----------------------------------------------*/
+footer {
+  background-color: #2F1B25;
+  color: #FFF4E9;
+}
