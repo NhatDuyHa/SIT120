@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week5</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p v-bind:title ="message2"> {{message}}</p>
+        <ol >
+            <li v-for="items in todos">
+              {{items.item}}
+            </li>
+        </ol>
+        <ol>
+            <todo-item v-for="todo in todos"
+            v-bind:todo = "todo.item"		
+        ></todo-item>
+        
+          
+        </ol>
+        <p><button v-on:click='IncreaseAndDecrease'>Counter</button>{{count}}{{pointer}}</p>
+        <counter></counter><counter></counter><counter></counter><counter></counter><counter></counter>
+   
+  <div :style="{ fontSize: postFontSize + 'em' }">
+    <blog-post
+      v-for="post in posts"
+      v-bind:title ="post"
+      v-on:enlarge-text="postFontSize +=0.1"
+    ></blog-post>	
+</div>
+    </div>
+
+    <script>    
+    Vue.component('blog-post', {
+  props: ['title'],
+  template: '<div>	<h3>{{ title.title }} </h3>	<div v-html>{{ title.id }}</div><button v-on:click="$emit(\'enlarge-text\')">Enlarge text</button></div>'
+})
+
+Vue.component("todo-item",{
+	props: ['todo'],
+	template: "<li>{{todo}}</li>",
+})
+
+Vue.component("counter",{
+    template: "<button v-on:click='counter ++; pointer --'>{{counter}},{{pointer}}</button>",
+    data: function() {
+        return{
+        counter:0,
+        pointer:0,
+        }
+ }
+})
+    var example = new Vue ({
+        el: "#app",
+        data: {
+            message: 'List of fruits',
+            message2: 'My favorite fruits',
+            todos: [
+                {key:1, item:'Apple'},
+                {key:2, item:'Banana'},
+                {key:3, item:'Coconut'}
+            ],
+            count:0,
+            pointer:0,
+            posts: [
+		  { id: 1, title: 'My journey with Vue' },
+		  { id: 2, title: 'Blogging with Vue' },
+		  { id: 3, title: 'Why Vue is so fun' }
+		],
+		postFontSize:1,
+
+        },
+        methods: {
+
+            IncreaseAndDecrease: function() {
+                this.count++;
+                this.pointer--
+            }
+        }
+
+    })
+
+    </script>
+    
+</body>
+</html>
